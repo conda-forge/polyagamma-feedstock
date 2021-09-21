@@ -1,5 +1,5 @@
 {% set name = "polyagamma" %}
-{% set version = "1.3.2b3" %}
+{% set version = "1.3.2" %}
 
 
 package:
@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/polyagamma-{{ version }}.tar.gz
-  sha256: 64b6625f987ea5af7d602b3c256d611f87cc809766734e62641e45410184a435
+  sha256: 610d1548ae8a33765d44247998dd21866aeda091bba92bbd55aba40d8e75faf2
 
 build:
-  number: 1
-  skip: true   # [py>=40 or py<36]
+  number: 0
+  skip: true  # [py>=40 or py<36]
   script_env:
     - BUILD_WHEEL=1
   script: {{ PYTHON }} -m pip install . -vv
@@ -46,4 +46,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - zoj613 
+    - zoj613
