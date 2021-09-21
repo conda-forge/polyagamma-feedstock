@@ -13,8 +13,6 @@ source:
 build:
   number: 0
   skip: true  # [py>=40 or py<36]
-  script_env:
-    - BUILD_WHEEL=1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
