@@ -20,7 +20,7 @@ requirements:
   host:
     - pip
     - python
-    - numpy 1.19.*
+    - numpy
     - poetry  >=1.1.4
   run:
     - python
