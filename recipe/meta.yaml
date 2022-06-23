@@ -16,12 +16,14 @@ build:
 
 requirements:
   build:
+    - cython ==0.29.30
+    - setuptools >=61.0.0
+    - setuptools-scm
     - {{ compiler('c') }}
   host:
     - pip
     - python
     - numpy
-    - poetry  >=1.1.4
   run:
     - python
     - {{ pin_compatible('numpy') }}
