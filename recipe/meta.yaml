@@ -17,6 +17,7 @@ build:
 requirements:
   build:
     - cython ==0.29.30
+    - numpy
     - setuptools >=61.0.0
     - setuptools-scm
     - {{ compiler('c') }}
