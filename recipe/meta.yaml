@@ -19,8 +19,7 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
-    - cython ==0.29.30
-    - numpy
+    - cython ==0.29.30                       # [build_platform != target_platform]
     - setuptools >=61.0.0
     - setuptools-scm
     - {{ compiler('c') }}
@@ -28,6 +27,7 @@ requirements:
     - pip
     - python
     - numpy
+    - cython
   run:
     - python
     - {{ pin_compatible('numpy') }}
