@@ -12,7 +12,7 @@ source:
 
 build:
   number: 1
-  script: cythonize polyagamma/*.pyx && {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} setup.py build_ext --inplace && {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
