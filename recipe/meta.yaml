@@ -11,7 +11,7 @@ source:
   sha256: 169f36b3e882f4b3d56b624ffee701f498fecf60a09d572329f5e3751c8e73c0
 
 build:
-  number: 1
+  number: 2
   script: {{ PYTHON }} setup.py build_ext --inplace && {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -19,7 +19,7 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
-    - cython ==0.29.30                       # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
     - setuptools >=61.0.0
     - setuptools-scm
     - {{ compiler('c') }}
