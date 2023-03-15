@@ -11,7 +11,7 @@ source:
   sha256: 84d7527f26d1e376996c0a6fc1c603db306fb70a079fe5091824c7be04625731
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} setup.py build_ext --inplace && {{ PYTHON }} -m pip install . -vv
 
 requirements:
