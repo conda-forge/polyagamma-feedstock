@@ -11,7 +11,7 @@ source:
   sha256: 0b823b4b386fc7ac5e1a1829b123eaefe881bce078240693c209a30b9da3d7b2
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} setup.py build_ext --inplace && {{ PYTHON }} -m pip install . -vv
   skip: True  # [py<39]
 
@@ -22,6 +22,7 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - cython <3.0.0                          # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - pip
     - python
@@ -32,7 +33,6 @@ requirements:
     - setuptools-scm
   run:
     - python
-    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
