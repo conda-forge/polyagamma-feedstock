@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/polyagamma-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/polyagamma-{{ version }}.tar.gz
   sha256: c16ded27967a8c01992b9fb9449c6d2fb3d44362207b821b143c3875fb70bb8e
 
 build:
@@ -19,21 +19,20 @@ requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
-    - cython >=3.0.0                          # [build_platform != target_platform]
+    - numpy 2.0.1                            # [build_platform != target_platform]
+    - cython >=3.0.0                         # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
   host:
     - pip
     - python
-    - numpy
+    - numpy 2.0.1
     - cython >=3.0.0
     - wheel
     - setuptools >=61.0.0
     - setuptools-scm
   run:
     - python
-    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
