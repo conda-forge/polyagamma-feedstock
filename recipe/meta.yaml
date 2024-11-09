@@ -1,5 +1,5 @@
 {% set name = "polyagamma" %}
-{% set version = "2.0.0" %}
+{% set version = "2.0.1" %}
 
 
 package:
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/polyagamma-{{ version }}.tar.gz
-  sha256: c16ded27967a8c01992b9fb9449c6d2fb3d44362207b821b143c3875fb70bb8e
+  sha256: 3bdc39a6a1201e3e84d47bb7d7475883797bdf3ba8e75a70e8113663260210fd
 
 build:
   number: 0
   script: {{ PYTHON }} setup.py build_ext --inplace && {{ PYTHON }} -m pip install . -vv
-  skip: true  # [py<39]
+  skip: true  # [py<310]
 
 requirements:
   build:
