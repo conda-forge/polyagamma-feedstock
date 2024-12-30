@@ -11,7 +11,7 @@ source:
   sha256: 3bdc39a6a1201e3e84d47bb7d7475883797bdf3ba8e75a70e8113663260210fd
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} setup.py build_ext --inplace && {{ PYTHON }} -m pip install . -vv
   skip: true  # [py<310]
 
@@ -19,14 +19,14 @@ requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - numpy 2.0.1                            # [build_platform != target_platform]
+    - numpy 2.2.1                            # [build_platform != target_platform]
     - cython >=3.0.0                         # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
   host:
     - pip
     - python
-    - numpy 2.0.1
+    - numpy 2.2.1
     - cython >=3.0.0
     - wheel
     - setuptools >=61.0.0
