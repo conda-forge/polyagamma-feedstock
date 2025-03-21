@@ -1,5 +1,5 @@
 {% set name = "polyagamma" %}
-{% set version = "2.0.1" %}
+{% set version = "2.0.2" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/polyagamma-{{ version }}.tar.gz
-  sha256: 3bdc39a6a1201e3e84d47bb7d7475883797bdf3ba8e75a70e8113663260210fd
+  sha256: 7fbadf5845433c7a81293503edf73020a3825935433d2bae2a5dd68183516f4c
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} setup.py build_ext --inplace && {{ PYTHON }} -m pip install . -vv
   skip: true  # [py<310]
 
@@ -19,14 +19,14 @@ requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - numpy 2.2.1                            # [build_platform != target_platform]
+    - numpy >=2.2.4                          # [build_platform != target_platform]
     - cython >=3.0.0                         # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
   host:
     - pip
     - python
-    - numpy 2.2.1
+    - numpy >=2.2.4
     - cython >=3.0.0
     - wheel
     - setuptools >=61.0.0
